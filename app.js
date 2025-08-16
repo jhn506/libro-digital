@@ -5,14 +5,12 @@ $(document).ready(function () {
     $('#cover').fadeOut(600, function () {
       if (!bookIniciado) {
         $('#book').turn({
-          width: $('#book').width(),
-          height: $('#book').height(),
+          width: 900,
+          height: 650,
           autoCenter: true,
+          display: 'double',
           elevation: 50,
           gradients: true,
-          acceleration: true,
-          display: 'double',
-          turnCorners: "bl,tr",
           when: {
             turned: function (e, page) {
               const totalPages = $('#book').turn('pages');
