@@ -92,6 +92,7 @@ body {
   max-width: 900px;
   max-height: 650px;
   display: none;
+  height: 612px !important;
 }
 
 /* Libro */
@@ -209,6 +210,7 @@ body {
     font-size: 14px;
   }
 }
+
 
 
 
