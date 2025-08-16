@@ -60,4 +60,5 @@ $(document).ready(function () {
 
   // Cerrar libro
   $('#closeBookBtn').on('click', closeBook);
+
 });
