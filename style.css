@@ -103,6 +103,7 @@ body {
   background: #f6f1e7;
   border: 8px solid #d2c4a3;
   position: relative;
+  height: 612px !important;
 }
 
 /* Página */
@@ -208,6 +209,7 @@ body {
     font-size: 14px;
   }
 }
+
 
 
 
