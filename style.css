@@ -84,8 +84,8 @@ body {
 #bookContainer {
   position: relative;
   top: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 52%;
+  transform: translateX(-52%);
   width: 90vw;
   height: 70vh;
   max-width: 900px;
@@ -206,3 +206,4 @@ body {
     font-size: 14px;
   }
 }
+
