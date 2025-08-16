@@ -3,151 +3,86 @@ body {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
   background: #e5d8c5 url('https://images.unsplash.com/photo-1519681393784-d120267933ba?fit=crop&w=1400&q=80') no-repeat center center fixed;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 
-/* Contenedor general */
-#bookContainer {
-  display: none;
-  text-align: center;
+/* Contenedor principal fijo */
+#mainContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Portada */
 #cover {
-  width: 450px;
+  position: absolute;
+  width: 900px;
   height: 650px;
-  background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=800&q=80') no-repeat center center;
-  background-size: cover;
-  border-radius: 12px;
-  box-shadow: 0px 5px 25px rgba(0,0,0,0.5);
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-/* Botón Abrir libro */
-#openBookBtn {
-  padding: 12px 25px;
-  font-size: 20px;
-  cursor: pointer;
-  background: #5a3825;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-#openBookBtn:hover {
-  background: #3a2416;
+  justify-content: center;
+  z-index: 10;
 }
 
 /* Libro */
-#book {
+#bookContainer {
+  display: none;
+  position: absolute;
   width: 900px;
   height: 650px;
-  margin: 0 auto;
 }
 
-/* Páginas */
-.page {
-  background: #fffdf5;
-  border: 1px solid #d4c8b0;
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
-  padding: 30px;
-  font-size: 18px;
-  line-height: 1.6;
+#book {
+  width: 100%;
+  height: 100%;
 }
 
-/* Controles */
-#controls {
-  margin-top: 15px;
-}
-
-#controls button {
-  padding: 10px 18px;
-  font-size: 16px;
-  margin: 0 8px;
-  cursor: pointer;
-  border: none;
-  border-radius: 6px;
-  background: #5a3825;
+/* Botones generales */
+button {
+  position: absolute;
+  background: #5c4033;
   color: white;
-  transition: background 0.3s;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 20;
+  transition: background 0.3s ease;
 }
 
-#controls button:hover {
-  background: #3a2416;
+button:hover {
+  background: #3e2b20;
 }
 
-/* --- 📱 Responsividad para móviles --- */
-@media (max-width: 1024px) {
-  #cover {
-    width: 300px;
-    height: 450px;
-  }
-
-  #book {
-    width: 600px;
-    height: 430px;
-  }
-
-  .page {
-    font-size: 16px;
-    padding: 20px;
-  }
+/* Botones específicos */
+#openBookBtn {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-@media (max-width: 768px) {
-  #cover {
-    width: 250px;
-    height: 380px;
-  }
-
-  #book {
-    width: 450px;
-    height: 320px;
-  }
-
-  .page {
-    font-size: 14px;
-    padding: 15px;
-  }
-
-  #openBookBtn {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-
-  #controls button {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
+#closeBookBtn {
+  top: 20px;
+  right: 20px;
 }
 
-@media (max-width: 480px) {
-  #cover {
-    width: 200px;
-    height: 300px;
-  }
+#prevPage {
+  top: 50%;
+  left: -60px;
+  transform: translateY(-50%);
+}
 
-  #book {
-    width: 320px;
-    height: 230px;
-  }
-
-  .page {
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  #controls button {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
+#nextPage {
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
 }
