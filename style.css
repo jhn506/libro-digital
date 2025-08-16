@@ -1,22 +1,214 @@
+/* Fondo general */
+body {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  background: #e5d8c5 url('https://images.unsplash.com/photo-1553401318-4d1e682025ea?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #4b3b2b;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Contenedor principal */
+#mainWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: -40px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Portada */
+.cover {
+  width: 450px;
+  height: 600px;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #d2c4a3 0%, #a38c5d 100%);
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  opacity: 0.85;
+}
+
+.cover-title {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  font-family: 'Georgia', serif;
+  font-size: 48px;
+  color: #f7f0e3;
+  text-shadow: 2px 2px 4px #000000cc;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+}
+
+#openBookBtn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f7f0e3;
+  background-color: #6c4a10;
+  border: none;
+  border-radius: 35px;
+  box-shadow: 0 5px 15px rgba(108, 74, 16, 0.7);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-shadow: 1px 1px 3px #000;
+}
+
+#openBookBtn:hover {
+  background-color: #8e6815;
+}
+
+/* Contenedor del libro */
 #bookContainer {
+  position: relative;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 90vw;
   height: 70vh;
   max-width: 900px;
   max-height: 650px;
+  display: none;
 }
 
+/* Libro */
 #book {
   width: 100%;
   height: 100%;
+  margin: auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), inset 0 0 50px #fff8dc;
+  border-radius: 25px;
+  background: #f6f1e7;
+  border: 8px solid #d2c4a3;
+  position: relative;
 }
 
+/* Página */
 .page {
   width: 50%;
   height: 100%;
+  background: #fdf6e3;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+  border-radius: 0px;
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 20px #c1b393;
+  padding: 30px;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  color: #5b4b37;
+  line-height: 1.6;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
 }
 
 .page img {
   max-width: 100%;
-  height: auto;
+  max-height: 50%;
   object-fit: contain;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.page p {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.page p strong {
+  color: #5b4b37;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Botones */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(108, 74, 16, 0.75);
+  border: none;
+  color: #f7f0e3;
+  font-size: 28px;
+  padding: 11px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(108, 74, 16, 0.7);
+  z-index: 1000;
+}
+
+.navBtn:hover {
+  background-color: rgba(142, 104, 21, 0.9);
+}
+
+#prevPage {
+  top: 50%;
+  left: -36px;
+}
+
+#nextPage {
+  top: 50%;
+  right: -50px;
+}
+
+.closeBtn {
+  top: 8px;
+  right: -60px;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transform: none;
+}
+
+.closeBtn:hover {
+  background-color: #b34747;
+}
+
+/* 📱 Ajustes para móviles */
+@media (max-width: 600px) {
+  #bookContainer {
+    width: 100vw;
+    height: 80vh;
+  }
+  .page {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .cover {
+    width: 80vw;
+    height: auto;
+  }
+  .cover-title {
+    font-size: 28px;
+  }
+  #openBookBtn {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
 }
