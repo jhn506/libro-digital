@@ -84,7 +84,7 @@ body {
 /* Contenedor del libro */
 #bookContainer {
   position: relative;
-  top: 5vh;
+  top: 10vh;
   left: 52%;
   transform: translateX(-52%);
   width: 90vw;
@@ -104,6 +104,7 @@ body {
   background: #f6f1e7;
   border: 8px solid #d2c4a3;
   position: relative;
+  height: 612px !important;
   
 }
 
@@ -210,6 +211,7 @@ body {
     font-size: 14px;
   }
 }
+
 
 
 
