@@ -1,17 +1,31 @@
 $(document).ready(function () {
   let bookIniciado = false;
 
+  function getBookSize() {
+    // Ajustar a 90% del ancho y 70% del alto de la pantalla
+    let width = Math.min(window.innerWidth * 0.9, 900); 
+    let height = Math.min(window.innerHeight * 0.7, 650); 
+
+    // Ajustar a proporción de doble página
+    if (width < 500) {
+      // en móviles muy pequeños mostramos una página
+      return { width: width, height: height, display: 'single' };
+    }
+    return { width: width, height: height, display: 'double' };
+  }
+
   function openBook() {
     $('#cover').fadeOut(600, function () {
       if (!bookIniciado) {
+        let size = getBookSize();
         $('#book').turn({
-          width: 900,
-          height: 650,
+          width: size.width,
+          height: size.height,
           autoCenter: true,
+          display: size.display,
           elevation: 50,
           gradients: true,
           acceleration: true,
-          display: 'double',
           turnCorners: "bl,tr",
           when: {
             turned: function (e, page) {
@@ -21,9 +35,7 @@ $(document).ready(function () {
           }
         });
 
-        $('#book').turn('disable', true);
         bookIniciado = true;
-
         setTimeout(() => {
           $('#bookContainer').fadeIn(600);
         }, 300);
@@ -40,6 +52,15 @@ $(document).ready(function () {
     });
   }
 
+  // Recalcular tamaño al redimensionar
+  $(window).on('resize', function () {
+    if (bookIniciado) {
+      let size = getBookSize();
+      $('#book').turn('size', size.width, size.height);
+      $('#book').turn('display', size.display);
+    }
+  });
+
   // Abrir libro
   $('#openBookBtn').on('click', openBook);
 
@@ -47,7 +68,7 @@ $(document).ready(function () {
   $('#prevPage').on('click', () => {
     const page = $('#book').turn('page');
     if (page === 1) {
-      closeBook(); // si está en la primera página, volver a la portada
+      closeBook(); 
     } else {
       $('#book').turn('previous');
     }
