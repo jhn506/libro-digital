@@ -9,6 +9,7 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  height: 613px !important;
 }
 
 /* Contenedor principal */
@@ -124,6 +125,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   overflow: hidden;
+  height: 612px !important;
 }
 
 .page img {
@@ -206,6 +208,7 @@ body {
     font-size: 14px;
   }
 }
+
 
 
 
