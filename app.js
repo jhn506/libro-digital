@@ -3,12 +3,11 @@ $(document).ready(function () {
 
   function getBookSize() {
     // Ajustar a 90% del ancho y 70% del alto de la pantalla
-    let width = Math.min(window.innerWidth * 0.9, 900); 
-    let height = Math.min(window.innerHeight * 0.7, 650); 
+    let width = Math.min(window.innerWidth * 0.9, 900);
+    let height = Math.min(window.innerHeight * 0.7, 650);
 
-    // Ajustar a proporción de doble página
-    if (width < 500) {
-      // en móviles muy pequeños mostramos una página
+    // Si la pantalla es muy angosta, usar "single page"
+    if (window.innerWidth < 600) {
       return { width: width, height: height, display: 'single' };
     }
     return { width: width, height: height, display: 'double' };
@@ -52,7 +51,7 @@ $(document).ready(function () {
     });
   }
 
-  // Recalcular tamaño al redimensionar
+  // 🔄 Recalcular tamaño al redimensionar la ventana
   $(window).on('resize', function () {
     if (bookIniciado) {
       let size = getBookSize();
@@ -68,7 +67,7 @@ $(document).ready(function () {
   $('#prevPage').on('click', () => {
     const page = $('#book').turn('page');
     if (page === 1) {
-      closeBook(); 
+      closeBook(); // si está en la primera página, volver a la portada
     } else {
       $('#book').turn('previous');
     }
