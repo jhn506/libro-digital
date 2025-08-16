@@ -128,7 +128,7 @@ body {
 
 .page img {
   width: 100%;
-  max-height: 80%;
+  max-height: 90%;
   object-fit: contain;
   border-radius: 15px;
   margin-bottom: 20px;
@@ -206,5 +206,6 @@ body {
     font-size: 14px;
   }
 }
+
 
 
