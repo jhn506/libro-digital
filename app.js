@@ -8,9 +8,11 @@ $(document).ready(function () {
           width: 900,
           height: 650,
           autoCenter: true,
-          display: 'double',
           elevation: 50,
           gradients: true,
+          acceleration: true,
+          display: 'double',
+          turnCorners: "bl,tr",
           when: {
             turned: function (e, page) {
               const totalPages = $('#book').turn('pages');
@@ -45,7 +47,7 @@ $(document).ready(function () {
   $('#prevPage').on('click', () => {
     const page = $('#book').turn('page');
     if (page === 1) {
-      closeBook();
+      closeBook(); // si está en la primera página, volver a la portada
     } else {
       $('#book').turn('previous');
     }
