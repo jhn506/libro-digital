@@ -179,7 +179,7 @@ body {
 
 @media (max-width: 600px) {
   #bookContainer {
-    width: 100%;
+    width: 90%;
     height: 90vh;
   }
   #book {
@@ -201,13 +201,10 @@ body {
     font-size: 18px;
     padding: 10px 20px;
   }
-    #bookContainer {
-          /* quitar el 50% */
-    right: 10;         /* alinear a la derecha */
-    transform: none;  /* eliminar translateX */
-  }
+ 
  
 }
+
 
 
 
