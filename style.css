@@ -179,7 +179,7 @@ body {
 
 @media (max-width: 600px) {
   #bookContainer {
-     width: 90%;          /* un poco más pequeño que 100% */
+     width: 100%;          /* un poco más pequeño que 100% */
     height: 90vh;
     left: 50%;           /* mantener centrado */
     transform: translateX(-50%);
@@ -222,6 +222,7 @@ body {
   }
  
 }
+
 
 
 
