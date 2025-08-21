@@ -174,10 +174,7 @@ body {
     width: 700px;
     height: 500px;
   }
-   #prevPage {
   
-    left: -6px;    /* ajustar posición a la derecha */
-  }
 }
 
 @media (max-width: 600px) {
@@ -204,11 +201,14 @@ body {
     font-size: 18px;
     padding: 10px 20px;
   }
-   #prevPage {
-  
-    left: -6px;    /* ajustar posición a la derecha */
+    #bookContainer {
+    left: auto;       /* quitar el 50% */
+    right: 0;         /* alinear a la derecha */
+    transform: none;  /* eliminar translateX */
   }
+ 
 }
+
 
 
 
