@@ -179,7 +179,7 @@ body {
 
 @media (max-width: 600px) {
   #bookContainer {
-    width: 90%;
+    width: 98%;
     height: 90vh;
   }
   #book {
@@ -204,6 +204,7 @@ body {
  
  
 }
+
 
 
 
