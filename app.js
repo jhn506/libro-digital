@@ -1,30 +1,30 @@
 $(document).ready(function () {
   let bookIniciado = false;
 
-  function getBookDimensions() {
-    let w = $(window).width();
-    let h = $(window).height();
+  // 🔹 función para obtener tamaño según dispositivo
+  function getBookSize() {
+    const width = $(window).width();
 
-    if (w > 1024) {
+    if (width <= 600) {
+      // celular
+      return { width: $(window).width(), height: $(window).height() * 0.9 };
+    } else if (width <= 1024) {
+      // tablet
+      return { width: 700, height: 500 };
+    } else {
       // PC
       return { width: 900, height: 650 };
-    } else if (w > 768) {
-      // Tablet
-      return { width: Math.min(700, w * 0.9), height: h * 0.7 };
-    } else {
-      // Celular
-      return { width: Math.min(400, w * 0.95), height: h * 0.75 };
     }
   }
 
   function openBook() {
     $('#cover').fadeOut(600, function () {
       if (!bookIniciado) {
-        let dims = getBookDimensions();
+        const size = getBookSize();
 
         $('#book').turn({
-          width: dims.width,
-          height: dims.height,
+          width: size.width,
+          height: size.height,
           autoCenter: true,
           elevation: 50,
           gradients: true,
@@ -65,7 +65,7 @@ $(document).ready(function () {
   $('#prevPage').on('click', () => {
     const page = $('#book').turn('page');
     if (page === 1) {
-      closeBook(); // si está en la primera página, volver a la portada
+      closeBook();
     } else {
       $('#book').turn('previous');
     }
@@ -79,11 +79,11 @@ $(document).ready(function () {
   // Cerrar libro
   $('#closeBookBtn').on('click', closeBook);
 
-  // 🔄 Ajustar tamaño al cambiar orientación o tamaño de ventana
+  // 🔹 Redimensionar dinámico al rotar pantalla
   $(window).on('resize', function () {
     if (bookIniciado) {
-      let dims = getBookDimensions();
-      $('#book').turn('size', dims.width, dims.height);
+      const size = getBookSize();
+      $('#book').turn('size', size.width, size.height);
     }
   });
 });
