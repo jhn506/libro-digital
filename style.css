@@ -201,9 +201,10 @@ body {
     padding: 10px 20px;
   }
    #prevPage {
-    left: auto;
-    right: 80px;      /* ajustar posición a la derecha */
+  
+    right: 20px;      /* ajustar posición a la derecha */
   }
 }
+
 
 
