@@ -202,9 +202,10 @@ body {
   }
    #prevPage {
   
-    right: 20px;      /* ajustar posición a la derecha */
+    left: -36px;    /* ajustar posición a la derecha */
   }
 }
+
 
 
 
