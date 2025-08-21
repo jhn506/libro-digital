@@ -161,11 +161,21 @@ body {
 }
 
 #prevPage {
+   top: 290px;
   left: -36px;
+  padding-top: 6px;
+  padding-bottom: 14px; 
+  padding-left: 16px; 
+  padding-right: 16px;
 }
 
 #nextPage {	
-  right: -36px;
+  top: 290px;
+  right: -50px;
+  padding-top: 6px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .closeBtn {
@@ -206,6 +216,7 @@ body {
     font-size: 14px;
   }
 }
+
 
 
 
