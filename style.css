@@ -1,7 +1,7 @@
 /* Fondo general */
 body {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  background: #e5d8c5 url('https://images.unsplash.com/photo-1553401318-4d1e682025ea?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background: #e5d8c5 url('https://images.unsplash.com/photo-1553401318-4d1e682025ea?q=80&w=1170&auto=format&fit=crop') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -86,14 +86,14 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 900px;
-  height: 600px !important;
+  height: 650px;
   display: none;
 }
 
 /* Libro */
 #book {
-  width: 900px;
-  height: 580px !important;
+  width: 100%;
+  height: 100%;
   margin: auto;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), inset 0 0 50px #fff8dc;
   border-radius: 25px;
@@ -104,16 +104,14 @@ body {
 
 /* Página */
 .page {
-  width: 450px;
-  height: 650px !important;
+  width: 100%;
+  height: 100%;
   background: #fdf6e3;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
-  background-size: 40px 40px;
-  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 20px #c1b393;
-  padding: 30px;
+  box-shadow: inset 0 0 20px #c1b393;
+  padding: 20px;
   box-sizing: border-box;
   font-family: 'Georgia', serif;
-  font-size: 20px;
+  font-size: 18px;
   color: #5b4b37;
   line-height: 1.6;
   text-align: center;
@@ -126,22 +124,11 @@ body {
 
 .page img {
   width: 100%;
-  max-height: 445px;
+  height: auto;
+  max-height: 60%;
   object-fit: contain;
   border-radius: 15px;
   margin-bottom: 20px;
-}
-
-.page p {
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-}
-
-.page p strong {
-  color: #5b4b37;
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* Botones */
@@ -165,12 +152,10 @@ body {
 }
 
 #prevPage {
-  top: 290px;
   left: -36px;
 }
 
 #nextPage {	
-  top: 290px;
   right: -50px;
 }
 
@@ -183,45 +168,26 @@ body {
   transform: none;
 }
 
-.closeBtn:hover {
-  background-color: #b34747;
-}
-
-/* 📱 Responsive para tablets */
+/* 📱 Responsive */
 @media (max-width: 1024px) {
   #bookContainer {
     width: 700px;
-    height: 500px !important;
-  }
-  #book {
-    width: 700px;
-    height: 480px !important;
-  }
-  .page {
-    width: 350px;
-    height: 500px !important;
-  }
-  .cover {
-    width: 350px;
-    height: 480px;
+    height: 500px;
   }
 }
 
-/* 📱 Responsive para celulares */
 @media (max-width: 600px) {
   #bookContainer {
     width: 100%;
-    height: 90vh !important;
+    height: 90vh;
   }
   #book {
     width: 100%;
-    height: 90vh !important;
+    height: 100%;
   }
   .page {
-    width: 100%;
-    height: 90vh !important;
     font-size: 16px;
-    padding: 15px;
+    padding: 10px;
   }
   .cover {
     width: 80%;
