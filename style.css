@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   color: #4b3b2b;
-  height: 100vh;
+  height: 100vh; 
   overflow: hidden;
   position: relative;
 }
@@ -200,4 +200,9 @@ body {
     font-size: 18px;
     padding: 10px 20px;
   }
+   #prevPage {
+    left: auto;
+    right: 60px;      /* ajustar posición a la derecha */
+  }
 }
+
