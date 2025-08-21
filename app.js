@@ -1,19 +1,19 @@
 $(document).ready(function () {
   let bookIniciado = false;
 
-  // 🔹 función para obtener tamaño según dispositivo
   function getBookSize() {
     const width = $(window).width();
+    const height = $(window).height() * 0.9;
 
     if (width <= 600) {
-      // celular
-      return { width: $(window).width(), height: $(window).height() * 0.9 };
+      // móvil → una sola página
+      return { width: width, height: height, display: 'single' };
     } else if (width <= 1024) {
       // tablet
-      return { width: 700, height: 500 };
+      return { width: 700, height: 500, display: 'double' };
     } else {
       // PC
-      return { width: 900, height: 650 };
+      return { width: 900, height: 650, display: 'double' };
     }
   }
 
@@ -25,11 +25,11 @@ $(document).ready(function () {
         $('#book').turn({
           width: size.width,
           height: size.height,
+          display: size.display,
           autoCenter: true,
           elevation: 50,
           gradients: true,
           acceleration: true,
-          display: 'double',
           turnCorners: "bl,tr",
           when: {
             turned: function (e, page) {
@@ -39,7 +39,6 @@ $(document).ready(function () {
           }
         });
 
-        $('#book').turn('disable', true);
         bookIniciado = true;
 
         setTimeout(() => {
@@ -58,10 +57,8 @@ $(document).ready(function () {
     });
   }
 
-  // Abrir libro
   $('#openBookBtn').on('click', openBook);
 
-  // Página anterior
   $('#prevPage').on('click', () => {
     const page = $('#book').turn('page');
     if (page === 1) {
@@ -71,19 +68,18 @@ $(document).ready(function () {
     }
   });
 
-  // Página siguiente
   $('#nextPage').on('click', () => {
     $('#book').turn('next');
   });
 
-  // Cerrar libro
   $('#closeBookBtn').on('click', closeBook);
 
-  // 🔹 Redimensionar dinámico al rotar pantalla
-  $(window).on('resize', function () {
+  // 🔹 Redimensionar dinámico
+  $(window).on('resize orientationchange', function () {
     if (bookIniciado) {
       const size = getBookSize();
       $('#book').turn('size', size.width, size.height);
+      $('#book').turn('display', size.display);
     }
   });
 });
