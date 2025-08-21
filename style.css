@@ -174,13 +174,12 @@ body {
     width: 700px;
     height: 500px;
   }
-  
 }
 
 @media (max-width: 600px) {
   #bookContainer {
     width: 100%;
-    height: 90vh !important;
+    height: 90vh;
   }
   #book {
     width: 100%;
@@ -202,6 +201,7 @@ body {
     padding: 10px 20px;
   }
 }
+
 
 
 
