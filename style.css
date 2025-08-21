@@ -202,12 +202,13 @@ body {
     padding: 10px 20px;
   }
     #bookContainer {
-    left: auto;       /* quitar el 50% */
-    right: 0;         /* alinear a la derecha */
+          /* quitar el 50% */
+    right: 10;         /* alinear a la derecha */
     transform: none;  /* eliminar translateX */
   }
  
 }
+
 
 
 
